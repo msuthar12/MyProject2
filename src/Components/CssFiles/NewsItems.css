@@ -1,0 +1,36 @@
+.itemContainer{
+    margin: 20px auto;
+    border: 2px solid black;
+    width: 250px;
+    background-color: white;
+    /* height: 250px; */
+}
+
+.itemSub1{
+    border: 2px solid blue;
+    height: 226px;
+}
+
+.itemSub2{
+    border: 2px solid yellow;
+    height: 73px;
+
+}
+
+.readBtn{
+    position: relative;
+    top: 66%;
+    left: 2%;
+    border-radius: 6px;
+    background-color: 	#2a4d69;
+    color: #e7eff6;
+    opacity: 0.7;
+    }
+
+.readBtn:active{
+    transform: scale(0.95);
+}
+
+.itemContainer:hover{
+    transform: scale(1.1);
+}

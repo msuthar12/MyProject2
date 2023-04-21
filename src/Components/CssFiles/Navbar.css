@@ -1,0 +1,57 @@
+.navContainer{
+    
+    margin: 0px;
+    padding: 0px;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 100
+}
+    
+
+
+.navMenu{
+    margin: 0px;
+    padding: 0px;
+    /* border: 2px solid black; */
+    /* height: 50px; */
+    /* box-sizing: border-box; */
+    /* text-align: center; */
+}
+
+
+ul{
+    /* border: 2px solid blue;*/
+    background-color: #353839;
+    margin: 0px;
+    padding: 0px;
+    height: 36px;
+    line-height: 36px;
+    /* float: left; */
+    
+    
+}
+
+li{
+    float: left;
+    list-style: none;
+    
+    /* margin:0 20px; */
+    /* margin: 20px 20px; */
+    /* border: 1px solid blue; */
+    
+}
+
+a{
+    /* border: 1px solid black; */
+    width: 150px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #e7eff6;
+}
+
+a:hover{
+    background-color:#e7eff6 ;
+    color: #353839;
+}
