@@ -5,7 +5,7 @@ export default class ItemModal extends Component {
     return (
       <div className='itemModalContainer'>
         <div className="itemModal">
-            Hello
+            
         </div>
       </div>
     )
