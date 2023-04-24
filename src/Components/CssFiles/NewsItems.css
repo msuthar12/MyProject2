@@ -32,5 +32,12 @@
 }
 
 .itemContainer:hover{
-    transform: scale(1.1);
+    transform: scale(1.5);
+    width: 500px;
+    position: Absolute;
+    top: 25%;
+    left: 30%;
+    
+    z-index: 100;
+
 }
