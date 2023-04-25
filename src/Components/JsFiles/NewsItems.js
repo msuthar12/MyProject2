@@ -8,11 +8,13 @@ export default class NewsItems extends Component {
       <div className='itemContainer'>
 
             <div className="itemSub1">
-
+              <img src={this.props.imageUrl} alt="" />
             </div>
             <div className="itemSub2">
-                <button className="readBtn">Read More</button>
+             <h2> {this.props.title}... </h2>
+              {this.props.description}...
             </div>
+            <a href={this.props.readMoreUrl} target="_blank" className="readBtn">Read More..</a>
         
       </div>
 

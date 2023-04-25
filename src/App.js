@@ -13,9 +13,9 @@ export default class App extends Component {
   render() {
     return (
       <div className='mainContainer'>
-        {/* <Navbar /> */}
-        {/* <News/> */}
-        <ItemModal/>
+        <Navbar  />
+        <News />
+        {/* <ItemModal/> */}
       </div>
     )
   }

@@ -1,37 +1,58 @@
 .itemContainer{
-    margin: 20px auto;
-    border: 2px solid black;
-    width: 250px;
+    margin: 25px;
+    /* padding: 15px; */
+    /* border: 2px solid black; */
+    width: 450px;
     background-color: white;
-    /* height: 250px; */
+    /* height: 350px; */
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 5px;
+    
 }
 
 .itemSub1{
-    border: 2px solid blue;
-    height: 226px;
+    /* border: 2px solid blue; */
+    height: 250px;
 }
 
+.itemSub1>img{
+    border-radius: 5px;
+    width: 450px;
+    height: 250px;
+}
+
+
 .itemSub2{
-    border: 2px solid yellow;
-    height: 73px;
+    padding: 10px;
+    /* border: 2px solid yellow; */
+    height: 110px;
 
 }
 
 .readBtn{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    /* margin-top: 130px; */
     position: relative;
-    top: 66%;
+    top:-5px;
     left: 2%;
     border-radius: 6px;
-    background-color: 	#2a4d69;
+    background-color: 	#5b5b6b;
     color: #e7eff6;
     opacity: 0.7;
-    }
+    
+}
 
 .readBtn:active{
     transform: scale(0.95);
 }
 
-.itemContainer:hover{
+.readBtn:hover{
+    cursor: pointer;
+}
+
+/* .itemContainer:hover{
     transform: scale(1.5);
     width: 500px;
     position: Absolute;
@@ -40,4 +61,4 @@
     
     z-index: 100;
 
-}
+} */
