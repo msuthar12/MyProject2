@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewsItems from "./NewsItems";
+import Spinner from "../Spinner";
 
 export default class News extends Component {
   
@@ -14,36 +15,55 @@ export default class News extends Component {
 
   async componentDidMount(){
 
-    let url= `https://newsapi.org/v2/top-headlines?country=in&apiKey=4ca0a7e5deed4567a1a57c6b41596bff&page=${this.state.page}`;
+    let url= `https://newsapi.org/v2/top-headlines?country=in&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=2`;
+      this.setState({
+        loading:true
+      });
+
     let newsData = await fetch(url);
     let myNewsData = await newsData.json();
-    
+    console.log(myNewsData);
     this.setState({
-      articles:myNewsData.articles
+      articles:myNewsData.articles,
+      totalResults:myNewsData.totalResults,
+      loading:false
     });
   }
 
   changePageToNext =async ()=>{
-   
-    let url= `https://newsapi.org/v2/top-headlines?country=in&apiKey=4ca0a7e5deed4567a1a57c6b41596bff&page=${this.state.page+1}`;
+
+    if(this.state.page+1>Math.ceil(this.state.totalResults/2)){
+
+    }
+    else{
+    let url= `https://newsapi.org/v2/top-headlines?country=in&apiKey=${this.props.apiKey}&page=${this.state.page+1}&pagesize=2`;
+    this.setState({
+      loading:true
+    });
     let newsData = await fetch(url);
     let myNewsData = await newsData.json();
     
     this.setState({
       page:this.state.page+1,
-      articles:myNewsData.articles
+      articles:myNewsData.articles,
+      loading:false
     });
     
   }
+}
   changePageToPrevious =async ()=>{
     
-    let url= `https://newsapi.org/v2/top-headlines?country=in&apiKey=4ca0a7e5deed4567a1a57c6b41596bff&page=${this.state.page-1}`;
+    let url= `https://newsapi.org/v2/top-headlines?country=in&apiKey=${this.props.apiKey}&page=${this.state.page-1}&pagesize=2`;
+    this.setState({
+      loading:true
+    });
     let newsData = await fetch(url);
     let myNewsData = await newsData.json();
     
     this.setState({
       page:this.state.page-1,
-      articles:myNewsData.articles
+      articles:myNewsData.articles,
+      loading:false
     });
     
   }
@@ -58,7 +78,8 @@ export default class News extends Component {
           <h2>KhabriLal Ki Khabre</h2>
         </div>
         <div className="mainNewsContainer">
-          {this.state.articles.map((element) => {
+        {this.state.loading && <Spinner/>}
+          {!this.state.loading && this.state.articles.map((element) => {
 
               let imgUrl = "";
 
@@ -72,7 +93,7 @@ export default class News extends Component {
               }
 
             return (
-              <div className="newsContainer" key={element.Id}>
+              <div className="newsContainer" key={element.url}>
                 <NewsItems title={element.title?element.title.slice(0,70):""} description={element.description?element.description.slice(0,88):""} imageUrl={imgUrl} readMoreUrl={element.url} />
               </div>
             );
@@ -80,7 +101,7 @@ export default class News extends Component {
         </div>
         <div className="pageNavigateBtn">
           <button disabled={this.state.page<=1} className="previousBtn" onClick={this.changePageToPrevious}>Previous</button>
-          <button disabled={this.state.page===2} className="nextBtn" onClick={this.changePageToNext}>Next</button>
+          <button disabled={this.state.page+1>this.state.totalResults/2} className="nextBtn" onClick={this.changePageToNext}>Next</button>
         </div>
       </>
     );

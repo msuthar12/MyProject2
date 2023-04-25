@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <div className='mainContainer'>
         <Navbar  />
-        <News />
+        <News apiKey="7b8d4466699e4edfbeac462aa9b71457"/>
         {/* <ItemModal/> */}
       </div>
     )
