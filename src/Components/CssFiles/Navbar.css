@@ -11,6 +11,7 @@
 
 
 .navMenu{
+    
     margin: 0px;
     padding: 0px;
     /* border: 2px solid black; */
@@ -52,6 +53,36 @@ a{
 }
 
 a:hover{
+    background-color:#e7eff6 ;
+    color: #353839;
+}
+
+
+.newsTypes{
+    
+    
+    
+    display: inline;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    
+}
+
+
+
+.newsTypesBtn{
+    
+    border: none;
+    /* padding:0 20px; */
+    background:none;
+    color: white;
+    height: 36px;
+    line-height: 36px;
+    width: 130px;
+}
+
+.newsTypesBtn:hover{
     background-color:#e7eff6 ;
     color: #353839;
 }

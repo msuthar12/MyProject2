@@ -13,7 +13,7 @@ export default class News extends Component {
   }
 
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=2`;
+    let url = `https://newsapi.org/v2/${this.props.content}?q=${this.props.newsTypes}&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=${this.props.pageSize}`;
     this.setState({
       loading: true,
     });
@@ -22,7 +22,7 @@ export default class News extends Component {
     let myNewsData = await newsData.json();
     if (myNewsData.status == "ok") {
       
-      console.log(myNewsData.status);
+      
       this.setState({
         articles: myNewsData.articles,
         totalResults: myNewsData.totalResults,
@@ -38,12 +38,32 @@ export default class News extends Component {
     }
   }
 
+  loadNewsTypes = async () => {
+    console.log("I am newsTypes");
+    let url = `https://newsapi.org/v2/${this.props.content}?q=${this.props.newsTypes}&apiKey=${this.props.apiKey}&page=1&pagesize=${this.props.pageSize}`;
+    this.setState({
+      loading: true,
+    });
+
+    let newsData = await fetch(url);
+    let myNewsData = await newsData.json();
+    if (myNewsData.status == "ok") {
+      
+      
+      this.setState({
+        articles: myNewsData.articles,
+        totalResults: myNewsData.totalResults,
+        loading: false,
+      });
+    }
+  };
+
   changePageToNext = async () => {
-    if (this.state.page + 1 > Math.ceil(this.state.totalResults / 2)) {
+    if (this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)) {
     } else {
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${
+      let url = `https://newsapi.org/v2/${this.props.content}?q=${this.props.newsTypes}&apiKey=${
         this.props.apiKey
-      }&page=${this.state.page + 1}&pagesize=2`;
+      }&page=${this.state.page + 1}&pagesize=${this.props.pageSize}`;
       this.setState({
         loading: true,
       });
@@ -58,9 +78,9 @@ export default class News extends Component {
     }
   };
   changePageToPrevious = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${
+    let url = `https://newsapi.org/v2/${this.props.content}?q=${this.props.newsTypes}&apiKey=${
       this.props.apiKey
-    }&page=${this.state.page - 1}&pagesize=2`;
+    }&page=${this.state.page - 1}&pagesize=${this.props.pageSize}`;
     this.setState({
       loading: true,
     });
@@ -121,7 +141,7 @@ export default class News extends Component {
           </button>
           <button
             
-            disabled={this.state.page + 1 > this.state.totalResults / 2}
+            disabled={this.state.page + 1 > this.state.totalResults / this.props.pageSize}
             className="nextBtn"
             onClick={this.changePageToNext}
           >

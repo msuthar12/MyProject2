@@ -15,6 +15,14 @@ export class Navbar extends Component {
                     <li><a href='/'>Contact Us</a></li>
                 </ul>
             </div>
+            <div className="newsTypes">
+              <ul>
+                <li><button  id='typeBtn1' className='newsTypesBtn' onClick={this.props.handleNews} >Techonology</button></li>
+                <li><button  id='typeBtn2' className='newsTypesBtn' onClick={this.props.handleNews}>Sports</button></li>
+                <li><button  id='typeBtn3' className='newsTypesBtn' onClick={this.props.handleNews}>Politics</button></li>
+                <li><button  id='typeBtn4' className='newsTypesBtn' onClick={this.props.handleNews}>Business</button></li>
+              </ul>
+            </div>
         </div>
       
       </>
