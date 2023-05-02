@@ -66,3 +66,41 @@
     background-color: rgb(63, 137, 137);
     transform: none;
 }
+
+.countryContainer{
+    /* border: 2px solid black; */
+    
+    display: inline;
+    position: fixed;
+    /* position: absolute; */
+    top: 50px;
+    z-index: 100;
+
+    
+    
+}
+
+.countryContainer>select{
+    /* border: none; */
+    border-radius: 5px;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    background-color: #353839;
+    color: #e7eff6;
+    /* position: fixed; */
+    top: 10px;
+}
+
+.countryContainer>select>option{
+    
+    height: 100px;
+
+}
+
+.countryContainer>select:focus{
+    width: 150px;
+}
+    
+
+

@@ -10,7 +10,7 @@ export class Navbar extends Component {
         <div className="navContainer">
             <div className="navMenu">
                 <ul>
-                    <li><a href='/'>KhabriLal</a></li>
+                    <li><a href='/'>NewsWorld</a></li>
                     <li><a href='/'>About Us</a></li>
                     <li><a href='/'>Contact Us</a></li>
                 </ul>
@@ -23,6 +23,7 @@ export class Navbar extends Component {
                 <li><button  id='typeBtn4' className='newsTypesBtn' onClick={this.props.handleNews}>Business</button></li>
               </ul>
             </div>
+            
         </div>
       
       </>

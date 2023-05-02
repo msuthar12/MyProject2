@@ -13,7 +13,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      newsTypes: "knowledge",
+      newsTypes: "",
       handleNews: this.allNews,
       child: React.createRef(),
       buttonStatus: "on",
@@ -66,7 +66,7 @@ export default class App extends Component {
       document.getElementById(event.target.id).style.color = "#353839";
       document.getElementById(event.target.id).disabled = true;
     } else {
-      this.setState({ newsTypes: "bussiness" });
+      this.setState({ newsTypes: "business" });
       document.getElementById(event.target.id).style.backgroundColor =
         "#e7eff6";
       document.getElementById(event.target.id).style.color = "#353839";
@@ -91,7 +91,7 @@ export default class App extends Component {
         <News
           ref={this.state.child}
           apiKey="4ca0a7e5deed4567a1a57c6b41596bff"
-          content="everything"
+          content="top-headlines"
           newsTypes={this.state.newsTypes}
           pageSize="6"
         />

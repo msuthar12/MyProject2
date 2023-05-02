@@ -85,4 +85,6 @@ a:hover{
 .newsTypesBtn:hover{
     background-color:#e7eff6 ;
     color: #353839;
+    cursor: pointer;
 }
+
