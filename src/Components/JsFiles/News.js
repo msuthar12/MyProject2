@@ -134,7 +134,7 @@ export default class News extends Component {
           <h2>NEWS WORLD</h2>
         </div>
         <div className="countryContainer">
-              <select name="country" id="country" onClick={this.handleCountrySpecificNews}>
+              <select name="country" id="country" onChange={this.handleCountrySpecificNews}>
                 <option value="in">India</option>
                 <option value="us">USA</option>
                 <option value="mx">Mexico</option>
